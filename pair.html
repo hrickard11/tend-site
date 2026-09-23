@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pair up on Tend</title>
+<!-- Where a pair invite lands, on iPhone and Android alike (lib/links/invite.dart).
+     A placeholder while Tend is in testing: before launch, the store buttons
+     get the real App Store and Play links (docs/LAUNCH_CHECKLIST.md). -->
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 520px; margin: 40px auto; padding: 0 20px; line-height: 1.55; color: #1c2b26; background: #fbf7ef; }
+  h1 { font-size: 1.8rem; margin-bottom: .2rem; }
+  .code { font-size: 2.4rem; font-weight: 800; letter-spacing: .18em; background: #fff; border: 2px solid #d9cfc0; border-radius: 14px; padding: 12px 18px; text-align: center; margin: 18px 0; }
+  .button { display: block; text-align: center; padding: 14px; border-radius: 14px; margin: 10px 0; font-weight: 700; text-decoration: none; }
+  .open { background: #2f6b4f; color: #fff; }
+  .store { background: #fff; color: #2f6b4f; border: 2px solid #2f6b4f; }
+  .soon { color: #6b6257; border: 2px dashed #d9cfc0; background: none; }
+  p.small { font-size: .9rem; color: #6b6257; }
+</style>
+</head>
+<body>
+<h1>Raise a pet together</h1>
+<p>A friend asked you to pair up on Tend. You each pick your days, and the week counts when you both show up.</p>
+<div class="code" id="code">······</div>
+<a class="button open" id="open" href="petgame://pair/">Open in Tend</a>
+<p class="small">Already have Tend? The button above opens it and joins the pair. If it does not, open Tend, go to <strong>Pair</strong>, choose <strong>Join</strong> and type the code.</p>
+<h2>Don't have Tend yet?</h2>
+<span class="button store soon" id="ios">iPhone: coming to the App Store. Ask your friend for a TestFlight invite.</span>
+<a class="button store" id="android" href="https://play.google.com/store/apps/details?id=com.hayden.petgame.petgame">Android: Google Play</a>
+<p class="small">Keep this page, or the code, until Tend is on your phone.</p>
+<script>
+  // The code rides in the link: pair.html?pair=CODE. Letters and digits only.
+  var code = (new URLSearchParams(location.search).get('pair') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
+  if (code) {
+    document.getElementById('code').textContent = code;
+    document.getElementById('open').href = 'petgame://pair/' + code;
+    document.getElementById('android').href =
+      'https://play.google.com/store/apps/details?id=com.hayden.petgame.petgame&referrer=' + encodeURIComponent('pair=' + code);
+  } else {
+    var box = document.getElementById('code');
+    box.textContent = 'No code in this link. Ask your friend to send it again.';
+    box.style.fontSize = '1rem';
+    box.style.letterSpacing = 'normal';
+    box.style.fontWeight = '600';
+  }
+</script>
+</body>
+</html>
