@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pair up on Tend</title>
-<!-- Where a pair invite lands, on iPhone and Android alike (lib/links/invite.dart).
-     A placeholder while Tend is in testing: before launch, the store buttons
-     get the real App Store and Play links (docs/LAUNCH_CHECKLIST.md). -->
+<!-- Where a pair invite lands (lib/links/invite.dart). iPhone only: no
+     Android release for now (owner, 23 September 2026). A placeholder while
+     Tend is in testing: before launch, the App Store line becomes the real
+     link (docs/LAUNCH_CHECKLIST.md). -->
 <style>
   body { font-family: -apple-system, system-ui, sans-serif; max-width: 520px; margin: 40px auto; padding: 0 20px; line-height: 1.55; color: #1c2b26; background: #fbf7ef; }
   h1 { font-size: 1.8rem; margin-bottom: .2rem; }
@@ -25,8 +26,7 @@
 <a class="button open" id="open" href="petgame://pair/">Open in Tend</a>
 <p class="small">Already have Tend? The button above opens it and joins the pair. If it does not, open Tend, go to <strong>Pair</strong>, choose <strong>Join</strong> and type the code.</p>
 <h2>Don't have Tend yet?</h2>
-<span class="button store soon" id="ios">iPhone: coming to the App Store. Ask your friend for a TestFlight invite.</span>
-<a class="button store" id="android" href="https://play.google.com/store/apps/details?id=com.hayden.petgame.petgame">Android: Google Play</a>
+<span class="button store soon" id="ios">Tend is for iPhone, coming to the App Store. Until then, ask your friend for a TestFlight invite.</span>
 <p class="small">Keep this page, or the code, until Tend is on your phone.</p>
 <script>
   // The code rides in the link: pair.html?pair=CODE. Letters and digits only.
@@ -34,8 +34,6 @@
   if (code) {
     document.getElementById('code').textContent = code;
     document.getElementById('open').href = 'petgame://pair/' + code;
-    document.getElementById('android').href =
-      'https://play.google.com/store/apps/details?id=com.hayden.petgame.petgame&referrer=' + encodeURIComponent('pair=' + code);
   } else {
     var box = document.getElementById('code');
     box.textContent = 'No code in this link. Ask your friend to send it again.';
