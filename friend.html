@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add a friend on Tend</title>
+<!-- Where a friend invite lands (Invite.friendLink in lib/links/invite.dart).
+     Its own page, apart from pair.html, so a friend code never tries to join
+     a pair. It opens Tend at petgame://friend/CODE, and Tend asks "Add them
+     as a friend?". iPhone only for now. BEFORE LAUNCH: the App Store line
+     becomes the real link, as on pair.html (docs/LAUNCH_CHECKLIST.md). -->
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 520px; margin: 40px auto; padding: 0 20px; line-height: 1.55; color: #1c2b26; background: #fbf7ef; }
+  h1 { font-size: 1.8rem; margin-bottom: .2rem; }
+  .code { font-size: 2.4rem; font-weight: 800; letter-spacing: .18em; background: #fff; border: 2px solid #d9cfc0; border-radius: 14px; padding: 12px 18px; text-align: center; margin: 18px 0; }
+  .button { display: block; text-align: center; padding: 14px; border-radius: 14px; margin: 10px 0; font-weight: 700; text-decoration: none; }
+  .open { background: #2f6b4f; color: #fff; }
+  .store { background: #fff; color: #2f6b4f; border: 2px solid #2f6b4f; }
+  .soon { color: #6b6257; border: 2px dashed #d9cfc0; background: none; }
+  p.small { font-size: .9rem; color: #6b6257; }
+</style>
+</head>
+<body>
+<h1>Add a friend on Tend</h1>
+<p>A friend wants you on Tend with them. Friends cheer each other on, visit each other's pets, and keep each other going.</p>
+<div class="code" id="code">······</div>
+<a class="button open" id="open" href="petgame://friend/">Open in Tend</a>
+<p class="small">Already have Tend? The button above opens it and asks if you want to add your friend. If it doesn't, open Tend, go to <strong>Friends</strong>, tap <strong>Add a friend</strong> and search for the code.</p>
+<h2>Don't have Tend yet?</h2>
+<span class="button store soon" id="ios">Tend is for iPhone, coming to the App Store. Until then, ask your friend for a TestFlight invite.</span>
+<p class="small">Keep this page, or the code, until Tend is on your phone. Tap the link again once it's set up.</p>
+<script>
+  // The code rides in the link: friend.html?friend=CODE. Letters and digits only.
+  var code = (new URLSearchParams(location.search).get('friend') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
+  if (code) {
+    document.getElementById('code').textContent = code;
+    document.getElementById('open').href = 'petgame://friend/' + code;
+    // Try Tend right away, so one tap on the link is all it takes. Without
+    // Tend nothing opens, and this page stays with the code on it.
+    setTimeout(function () { location.href = 'petgame://friend/' + code; }, 300);
+  } else {
+    var box = document.getElementById('code');
+    box.textContent = 'No code in this link. Ask your friend to send it again.';
+    box.style.fontSize = '1rem';
+    box.style.letterSpacing = 'normal';
+    box.style.fontWeight = '600';
+    document.getElementById('open').style.display = 'none';
+  }
+</script>
+</body>
+</html>
