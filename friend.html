@@ -4,11 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Add a friend on Tend</title>
-<!-- Where a friend invite lands (Invite.friendLink in lib/links/invite.dart).
-     Its own page, apart from pair.html, so a friend code never tries to join
-     a pair. It opens Tend at petgame://friend/CODE, and Tend asks "Add them
-     as a friend?". iPhone only for now. BEFORE LAUNCH: the App Store line
-     becomes the real link, as on pair.html (docs/LAUNCH_CHECKLIST.md). -->
 <style>
   body { font-family: -apple-system, system-ui, sans-serif; max-width: 520px; margin: 40px auto; padding: 0 20px; line-height: 1.55; color: #1c2b26; background: #fbf7ef; }
   h1 { font-size: 1.8rem; margin-bottom: .2rem; }
@@ -34,10 +29,9 @@
   var code = (new URLSearchParams(location.search).get('friend') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
   if (code) {
     document.getElementById('code').textContent = code;
+    // Tend opens only from a tap on "Open in Tend". Sending the page to
+    // petgame:// by itself made Safari show an error to anyone without Tend.
     document.getElementById('open').href = 'petgame://friend/' + code;
-    // Try Tend right away, so one tap on the link is all it takes. Without
-    // Tend nothing opens, and this page stays with the code on it.
-    setTimeout(function () { location.href = 'petgame://friend/' + code; }, 300);
   } else {
     var box = document.getElementById('code');
     box.textContent = 'No code in this link. Ask your friend to send it again.';
