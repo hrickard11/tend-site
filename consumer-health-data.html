@@ -17,7 +17,7 @@
 </head>
 <body>
 <h1>Consumer Health Data Privacy Policy</h1>
-<p><strong>Effective and last updated October 12, 2026.</strong></p>
+<p><strong>Effective and last updated October 13, 2026.</strong></p>
 <p>This policy is for Tend, a game for adults in the United States made by Hayden Rickard. It covers "consumer health data" as Washington's My Health My Data Act, Nevada's consumer health data law (SB 370), Connecticut's consumer health data rules and similar laws define it: information that's linked or reasonably linkable to you and identifies your past, present or future physical or mental health. We apply it to everyone who uses Tend, wherever you live. Our <a href="privacy.html">privacy policy</a> covers everything else.</p>
 
 <h2>The consumer health data we collect</h2>
@@ -38,7 +38,7 @@
 <ul>
   <li>Apple Health, with your permission (including what other apps, smart scales and your Apple Watch write there).</li>
   <li>Your iPhone's motion sensor and your Apple Watch, during a session.</li>
-  <li>Your iPhone's location, only if you allow it: used on your phone during a session you start (including in the background with your phone in your pocket, while iOS shows its location indicator) so your pet follows your path and the trail's weather matches yours. The route stays on your phone for the workout's map and is never sent to us; if Save workouts to Apple Health is on, the route is saved to Apple Health with the workout. For weather, a position rounded to about two-thirds of a mile (1 km) goes to Open-Meteo.</li>
+  <li>Your iPhone's location, only if you allow it: used on your phone during a session you start (including in the background with your phone in your pocket, while iOS shows its location indicator) so your pet follows your path and the trail's weather matches yours. The route stays on your phone for the workout's map and is never sent to us; if Save workouts to Apple Health is on, the route is saved to Apple Health with the workout. For weather, a position rounded to about two-thirds of a mile (1 km) goes to Apple Weather (WeatherKit).</li>
   <li>What you type into Tend.</li>
 </ul>
 
@@ -48,29 +48,29 @@
   <li>To back your game up to your account, so it isn't lost and can come with you to a new phone.</li>
   <li>For the friend features you choose, and only with your separate OK to share your activity.</li>
 </ul>
-<p>We never use it for advertising and never sell it. Usage counts and crash reports, which you can choose to send to help improve Tend, never hold your steps, weight, food, sleep or heart rate. Tend never puts your health data in iCloud itself. If you back up your iPhone to iCloud, Apple's encrypted device backup includes Tend's files on your phone.</p>
+<p>We never use it for advertising and never sell it. Usage counts and crash reports, which you can choose to send to help improve Tend, never hold your steps, weight, food, sleep or heart rate. Some of those events are about your activity: that you met your goal for the day, finished a workout and which kind, logged a weigh-in or a meal, or booked a rest day. They say that it happened, never the numbers. Tend never puts your health data in iCloud itself. If you back up your iPhone to iCloud, Apple's encrypted device backup includes Tend's files on your phone.</p>
 
 <h2>Your consent</h2>
 <p>Tend asks for three separate consents on their own screen, before it reads or sends anything:</p>
 <ol>
   <li><strong>To collect and use your health data</strong> for the purposes above. It's needed to play, since your health is what feeds your pet. We updated the words of this consent in October 2026, so if you played before then, Tend asks you once more.</li>
   <li><strong>To share your activity with friends.</strong> Optional, and off unless you turn it on. Asked separately, and never bundled with anything else.</li>
-  <li><strong>To help improve Tend</strong> by sending anonymous usage counts (which screens open, whether a session finished, crashes), never your steps, weight, food, sleep or heart rate. Optional, and off unless you turn it on. Without it, nothing is counted, queued or sent, and crash reports stay on your phone. Anything an older version of Tend queued before this choice existed is deleted, never sent.</li>
+  <li><strong>To help improve Tend</strong> by sending usage counts tied to your account (which screens open, whether a session finished, crashes), never your steps, weight, food, sleep or heart rate. We updated these words in October 2026, because they used to call the counts anonymous, so if you'd said yes before then, Tend asks you once more. Optional, and off unless you turn it on. Without it, nothing is counted, queued or sent, and crash reports stay on your phone. Anything an older version of Tend queued before this choice existed is deleted, never sent.</li>
 </ol>
 <p>Each is recorded with its date and the version of the words you agreed to, and you can see them in Settings, then Your privacy. You can withdraw any of them there anytime. Withdrawing stops the collection or sharing right away; it doesn't delete what's already stored, which you can delete there too. Turning off Help improve Tend also throws away anything waiting to be sent.</p>
 
 <h2>Who we share it with</h2>
 <table>
   <tr><th>Who</th><th>Category</th><th>What and why</th></tr>
-  <tr><td>Supabase</td><td>Processor (server host)</td><td>Hosts our server and stores data only for us. It holds your account and your backup (which includes your consumer health data), your player card, your daily results (day_records), the server's own check of each day's result (day_ledger), the dates you marked yourself sick, with no reason (pause_days), your shared goal days (shared_goal_days), friends, cheers, gifts and chat, and, only with your OK to help improve Tend, usage counts and crash reports. Your past daily results and sick days stay there, where friends can no longer see them, until you delete your account. Supabase may only use any of it to provide that service to us.</td></tr>
+  <tr><td>Supabase</td><td>Processor (server host)</td><td>Hosts our server and stores data only for us. It holds your account and your backup (which includes your consumer health data), your player card, your daily results (day_records), the server's own check of each day's result (day_ledger), the dates you marked yourself sick, with no reason (pause_days), your shared goal days (shared_goal_days), friends, cheers, gifts and chat, your Tend+ subscription record from Apple, your Sign in with Apple token (kept only to revoke it when you delete your account), and, only with your OK to help improve Tend, usage counts and crash reports. Your past daily results and sick days stay there, where friends can no longer see them, until you delete your account. Supabase may only use any of it to provide that service to us.</td></tr>
   <tr><td>Apple</td><td>Platform</td><td>Apple Health and the Apple Watch keep your health data on your devices. The Tend app on your iPhone reads from Apple Health, and if Save workouts to Apple Health is on (it's on unless you turn it off in Settings), it saves the sessions you start on your iPhone there as workouts, with their distance and, for outdoor ones, their route. The Tend app on your Apple Watch saves the workouts you record with it to Apple Health. Apple also handles Sign in with Apple, notifications and App Store purchases. To draw a workout's map, Tend asks Apple Maps for the map of the area around its route; the route's points are drawn on your phone.</td></tr>
-  <tr><td>Google</td><td>Ads and sign-in</td><td>AdMob shows free players' ads, never personalized, and never gets any health data. Sign in with Google gets what you approve.</td></tr>
+  <tr><td>Google</td><td>Sign-in</td><td>Sign in with Google gets what you approve, and never any health data.</td></tr>
   <tr><td>Resend</td><td>Processor (email)</td><td>Sends sign-in codes and account emails: your email address and the email's contents.</td></tr>
-  <tr><td>Open-Meteo</td><td>Weather</td><td>A position rounded to about two-thirds of a mile (1 km), for the trail's weather, and nothing else about you.</td></tr>
+  <tr><td>Apple (WeatherKit)</td><td>Weather</td><td>A position rounded to about two-thirds of a mile (1 km), for the trail's weather, and nothing else about you.</td></tr>
   <tr><td>Open Food Facts</td><td>Food search</td><td>The words of a food search, or a barcode number, and nothing else about you.</td></tr>
   <tr><td>Your friends</td><td>Other users, only with your OK to share</td><td>Weeks active, streak, tier, milestones, the last day you exercised, and whether you met your goal each day; your daily total with a friend you share a goal with; and a live session's steps and minutes with a friend you exercise with. Without your OK, none of this is shared.</td></tr>
 </table>
-<p>We don't share consumer health data with advertisers, data brokers or Google AdMob. Google's ad software, which shows free players' ads, may collect device and connection information over time and across apps. It never gets your consumer health data. We have no affiliates. We may disclose it if the law requires it, and we'd tell you if the law allows.</p>
+<p>We don't share consumer health data with advertisers or data brokers. Tend has no ads and no ad software. We have no affiliates. We may disclose it if the law requires it, and we'd tell you if the law allows.</p>
 
 <h2>We never sell it</h2>
 <p>We don't sell consumer health data, and we never will without first getting your signed, written authorization, as Washington's law requires. We have never sold it.</p>
@@ -84,7 +84,7 @@
 </ul>
 
 <h2>How to make a request, and appeal</h2>
-<p>Email <a href="mailto:hrickard26@gmail.com">hrickard26@gmail.com</a>, or use Contact us in the app. Write from your account's email, or tell us your username, so we can check it's you. We'll answer within 45 days (and if we need up to 45 more, we'll tell you why). Requests are free.</p>
+<p>Email <a href="mailto:privacy@playtend.app">privacy@playtend.app</a>, or use Contact us in the app. Write from your account's email, or tell us your username, so we can check it's you. We'll answer within 45 days (and if we need up to 45 more, we'll tell you why). Requests are free.</p>
 <p>If we turn down your request, reply to our answer and ask us to look again. We'll answer your appeal within 45 days and explain our decision. If we deny it, you can contact your state attorney general. In Washington: <a href="https://www.atg.wa.gov/file-complaint">atg.wa.gov/file-complaint</a>. In Nevada: <a href="https://ag.nv.gov/Complaints/File_Complaint/">ag.nv.gov</a>. In Connecticut: <a href="https://portal.ct.gov/ag">portal.ct.gov/ag</a>.</p>
 
 <h2>How we protect it</h2>
@@ -94,7 +94,7 @@
 <p>If we want to collect consumer health data for a new purpose, or share it in a new way, we'll ask for your consent first. The date at the top says when this page last changed.</p>
 
 <h2>Contact</h2>
-<p>Hayden Rickard, who makes Tend and handles privacy requests: <a href="mailto:hrickard26@gmail.com">hrickard26@gmail.com</a>.</p>
+<p>Hayden Rickard, who makes Tend and handles privacy requests: <a href="mailto:privacy@playtend.app">privacy@playtend.app</a>.</p>
 
 <nav><a href="index.html">Tend</a> <a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms of Use</a> <a href="health.html">Health notice</a></nav>
 </body>
